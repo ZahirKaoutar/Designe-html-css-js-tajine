@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family:'sans-serif';
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            text-decoration:none;
+            text-transform:capitalize;
+            transition:.2s linear;
+        }
+
+        html{
+            font-size: 69.5%;
+        }
+
+        section{
+            padding:50px 9%;
+        }
+
+        .header{
+            position:fixed;
+            top:0;left:0;right:0;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:1px 8%;
+            z-index:2;
+            background:brown;
+        }
+
+        .header .logo img{
+            height: 6rem;
+        }
+
+        .navbar{
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a{
+            font-size:2rem;
+            margin-right: 2rem;
+            color: white;
+        }
+
+        .navbar a:hover{
+            color: orange;
+        }
+
+        .home{
+            display:flex;
+            flex-wrap:wrap;
+            gap:1.5rem;
+            min-height:100vh;
+            align-items:center;
+            justify-content:center;
+            background:brown;
+        }
+
+        .home .content{
+            flex: 1 1 40rem;
+        }
+
+        .home .content .title {
+            font-size: 5rem;
+            padding:10%;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .home .image {
+            position: relative;
+            flex: 1 1 50rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom:-8px;
+
+        }
+
+        .vapeur {
+            position: absolute;
+            top: 0;
+            left: 40%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            z-index: 1;
+        }
+
+        .vapeur span {
+            position: relative;
+            margin: 0 5px;
+            
+            display: block;
+            min-width: 8px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: animate 5s linear infinite;
+            animation-delay: calc(0.5s * var(--i));
+            filter:blur(9px);
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) scaleX(1);
+                opacity: 0;
+            }
+            15% {
+                
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-150px) scaleX(5);
+                
+            }
+            95% {
+               
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(-300px) scaleX(10);
+              
+            }
+        }
+
+        .home .image img{
+            width:70%;
+        }
+
+        .home .content .description{
+            font-size:2rem;
+            font-weight:lighter;
+            line-height:1.8;
+            padding: 1rem 0;
+            
+            color:beige;
+        }
+        .home .content .btn{
+            margin-top:1rem;
+            display:inline-block;
+            padding:.9rem 3rem;
+            font-size:1.7rem;
+            background-color:rgb(170, 93, 17);
+            color: aliceblue;
+        }
+        .thumb{
+            position:absolute;
+            left:50%;
+            bottom:20px;
+            transform:translateX(-50%);
+            display: flex;
+        }
+        .thumb li{
+            list-style:none;
+            display: inline-block;
+            margin:0 20px;
+            cursor:pointer;
+            transition: 0.5s ;
+
+        }
+        .thumb li img{
+            max-width: 90px;
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="logo3.jpg" alt="">
+        </a>
+        <nav class="navbar">
+            <a href="#" class="nav_item">home</a>
+            <a href="#" class="nav_item">about</a>
+            <a href="#" class="nav_item">menu</a>
+            <a href="#" class="nav_item">contact</a>
+        </nav>
+        <div id="menu" class="fas fa-bars"></div>
+    </header>
+
+    <section class="home">
+        <div class="content">
+            <h1 class="title">Delicious Tajine</h1>
+            <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quibusdam, quia doloribus eos, quod iste maxime, asperiores omnis dolorum non voluptates! Tempore fugit porro quaerat praesentium debitis magnam voluptates at.</p>
+            <a href="#" class="btn">Commander</a>
+        </div>
+        
+        <div class="image">
+            <div class="vapeur">
+                <span style="--i:1;"></span>
+                <span style="--i:2;"></span>
+                <span style="--i:3;"></span>
+                <span style="--i:4;"></span>
+                <span style="--i:5;"></span>
+                <span style="--i:6;"></span>
+                <span style="--i:7;"></span>
+                <span style="--i:8;"></span>
+                <span style="--i:9;"></span>
+                <span style="--i:10;"></span>
+                <span style="--i:11;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:14;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:17;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:19;"></span>
+            </div>
+           
+            <img src="tajine03.png" alt="" class="tajine">
+        
+        </div>
+        <ul class="thumb">
+            <li><a href="#"><img src=" tajine01.png" onclick="imgSlider('tajine01.png')  ; changeBgColor('#560101')"></a></li>
+            <li><img  src="tajine02.png"  onclick="imgSlider('tajine02.png')  ;changeBgColor('#042154')"></li>
+            <li><img  src="tajine03.png"  onclick="imgSlider('tajine03.png')  ;changeBgColor('#A52A2A')"></li>
+
+        </ul>
+       
+        
+    </section>
+
+    <script type="text/javascript">
+        function imgSlider(anything){
+            document.querySelector('.tajine').src=anything
+        }
+        function changeBgColor(color){
+    const sec = document.querySelector('.home');
+    sec.style.background = color;
+}
+
+    </script>
+  
+</body>
+</html>
